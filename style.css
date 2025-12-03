@@ -1,0 +1,142 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+html,body{
+width:100%;
+height:100%;
+}
+body{
+    min-width: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.piano{
+    background-color: #141414;
+    width: 700px;
+    height: 400px;
+    padding: 20px 30px;
+    border-radius: 40px;
+
+
+}
+
+.above{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #b2b2b2;
+}
+.above h2{
+    font-size: 1.6rem;
+}
+.column{
+    display: flex;
+    align-items: center;
+}
+.above span{
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+.volume input{
+    accent-color: rgb(196, 2, 226);
+}
+.check input{
+    height: 20px;
+    width: 55px;
+    background: #4b4b4b;
+    border-radius: 30px;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+
+}
+.check input::before{
+    content: "";
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    top: 10px;
+    left: 3px;
+    border-radius: 50%;
+    background: #8c8c8c;
+    transform: translateY(-50%);
+}
+.check input:checked::before{
+    left: 35px; 
+    background:  rgb(242, 0, 255);
+}
+
+.note{
+    display: flex;
+    list-style: none;
+    margin-top: 50px;
+}
+
+.note .key{
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+
+}
+.note .black{
+    width: 40px;
+    height: 140px;
+    margin-left: -20px;
+    margin-right: -18px;
+    z-index: 2;
+    border-radius: 0 0 5px 5px;
+    background:linear-gradient(#333, #000)
+}
+.note .black.active{
+    box-shadow: inset -5px -10px -10px rgba(255,255,255,0.1);
+    background: linear-gradient(to bottom,#000,#434343);
+}
+.note .white{
+    height: 230px;
+    width: 70px;
+    background: linear-gradient(#fff 96%, #eee 4%);
+}
+.note .white.active{
+    box-shadow: inset -5px -10px -10px rgba(0,0,0,0.2);
+    background: linear-gradient(to bottom,#fff 0%,#eee 100%);
+}
+.note .key span{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    color: #868686;
+    font-size: 1.13rem;
+    text-align: center;
+}
+
+
+@media  screen and (max-width :615px) {
+    .note .key:nth-child(14),
+    .note .key:nth-child(15),
+    .note .key:nth-child(16),
+    .note .key:nth-child(17) {
+                display: none;
+            }
+            .note .white{
+                width: 60px;
+            }
+            .note .black{
+                width: 40px;
+            }
+            .volume{
+                display: none;
+            }
+            .above .check{
+                display: none;
+            }
+            .piano{
+                width: 500px;
+            }
+            
+    
+}
+
+
